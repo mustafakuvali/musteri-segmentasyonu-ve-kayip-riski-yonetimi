@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: stg_satis
+    description: "Temizlenmis satis satirlari (iptal, bos musteri, hatali adet/fiyat atildi)"
+    columns:
+      - name: fatura_no
+        data_tests:
+          - not_null
+      - name: musteri_id
+        data_tests:
+          - not_null
+      - name: adet
+        data_tests:
+          - not_null
+      - name: birim_fiyat
+        data_tests:
+          - not_null
+
+  - name: stg_tatil
+    description: "UK resmi tatil takvimi (dis kaynak)"
+    columns:
+      - name: tatil_tarihi
+        data_tests:
+          - not_null
+
+  - name: mart_musteri_rfm
+    description: "Musteri basina RFM ozeti, segment ve churn etiketi"
+    columns:
+      - name: musteri_id
+        data_tests:
+          - unique
+          - not_null
+      - name: churn_flag
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+                quote: false
+      - name: segment
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Sampiyon', 'Potansiyel', 'Risk Altinda', 'Kaybedilmis']
+      - name: r_skor
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3, 4]
+                quote: false

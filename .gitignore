@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+logs/
+target/
+dbt_packages/
+*.duckdb
+*.duckdb.wal
+data/online_retail_II.xlsx
+data/online_retail_ii.csv
