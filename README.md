@@ -34,7 +34,7 @@ Atılanlar:
 - `dbt/models/marts/` : mart_musteri_rfm, mart_aylik_satis (analiz tabloları)
 - `dbt/models/schema.yml` : dbt testleri (10 test)
 - `prepare_data.py`, `prepare_tatil.py`, `export_mart.py` : veri hazırlama ve dışa aktarma
-- `dashboard.pbix` : Power BI panosu
+- `proje.pbix` : Power BI panosu
 - `veri_sozlugu.md` : sütun açıklamaları
 
 ## Çalıştırma
@@ -58,10 +58,16 @@ dbt test --profiles-dir .
 dbt docs generate --profiles-dir .
 ```
 5. Power BI için tabloları dışa aktarın: `python ..\export_mart.py`
-6. `dashboard.pbix` dosyasını Power BI Desktop ile açın.
+6. `proje.pbix` dosyasını Power BI Desktop ile açın.
 
 ## Dashboard
 ![Dashboard](dashboard.png)
+
+## dbt Akış Şeması
+Veri, ham dosyalardan staging modellerine, oradan mart tablolarına akar.
+Her modelin açıklaması ve testleri `dbt docs generate` ile üretilen dokümantasyonda görülebilir.
+
+![dbt akış şeması](dbt_lineage.png)
 
 ## Temel bulgular
 - Analizdeki 5.281 müşterinin yaklaşık %57'si kesme tarihinden sonraki 90 günde geri dönmedi.
