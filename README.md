@@ -80,3 +80,21 @@ ondalık ayracı sorun çıkarabildiği için).
 - Müşterilerin çoğu bireysel değil toptancıdır.
 - Müşteri numarası boş satırlar (yaklaşık %23) analiz dışında kalmıştır.
 - Kişisel veri içermez, müşteriler yalnızca anonim numarayla temsil edilir (KVKK uyumu).
+
+- 
+## Kaynakça
+
+**Veri kaynakları**
+- Chen, D. (2012). *Online Retail II* [Veri seti]. UCI Machine Learning Repository. https://doi.org/10.24432/C5CG6D (CC BY 4.0)
+- HM Government. (t.y.). *UK bank holidays* [Veri seti]. GOV.UK. https://www.gov.uk/bank-holidays (Erişim: 1 Kasım 2026)
+
+**Yöntem**
+- Chen, D., Sain, S. L., & Guo, K. (2012). Data mining for the online retail industry: A case study of RFM model-based customer segmentation using data mining. *Journal of Database Marketing & Customer Strategy Management, 19*(3), 197-208.
+
+**Araç dokümantasyonları**
+- dbt Labs. (t.y.). *dbt documentation*. https://docs.getdbt.com
+- DuckDB. (t.y.). *DuckDB documentation*. https://duckdb.org/docs
+- Microsoft. (t.y.). *Power BI Desktop documentation*. https://learn.microsoft.com/power-bi/
+
+**Yapay zekâ desteği**
+- Bu projede kod yazımı ve adım adım açıklama için yapay zekâ asistanı (Claude, Anthropic) yardımcı olarak kullanılmıştır. Üretilen kodlar ekip tarafından çalıştırılmış ve test edilmiştir.
