@@ -88,6 +88,23 @@ ondalık ayracı sorun çıkarabildiği için).
 - Kişisel veri içermez, müşteriler yalnızca anonim numarayla temsil edilir (KVKK uyumu).
 
 - 
+
+## Sık Karşılaşılan Sorunlar (Windows)
+
+- **`py` komutu bulunamıyor:** Python'u python.org'dan kurarken
+  "Add python.exe to PATH" kutucuğunu işaretleyin, sonra VS Code'u kapatıp açın.
+  Sürüm olarak Python 3.12 kullanın.
+- **`Activate.ps1` çalıştırılamıyor ("running scripts is disabled"):**
+  Terminale şunu yazın, sonra tekrar deneyin:
+  `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+- **Excel dosyası repoda yok:** `online_retail_II.xlsx` dosyasını UCI sitesinden
+  indirip `data/` klasörüne koyun, ardından `python prepare_data.py` çalıştırın.
+
+Bu adımlar temiz bir Windows bilgisayarında repo baştan kurularak test edilmiştir.
+`dbt run` (4 model) ve `dbt test` (10 test) hatasız çalışmıştır.
+
+-
+
 ## Kaynakça
 
 **Veri kaynakları**
