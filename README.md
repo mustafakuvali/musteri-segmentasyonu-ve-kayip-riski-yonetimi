@@ -72,6 +72,7 @@ dbt docs generate --profiles-dir .
 
 ## Dashboard
 ![Dashboard](dashboard.png)
+![Dashboard 2](dashboard2.png)
 
 ## dbt Akış Şeması
 Veri, ham dosyalardan staging modellerine, oradan mart tablolarına akar.
