@@ -33,7 +33,7 @@ Atılanlar:
 - `dbt/models/staging/` : stg_satis, stg_tatil (temizleme)
 - `dbt/models/marts/` : mart_musteri_rfm, mart_aylik_satis (analiz tabloları)
 - `dbt/models/schema.yml` : dbt testleri (10 test)
-- `prepare_data.py`, `prepare_tatil.py`, `export_mart.py` : veri hazırlama ve dışa aktarma
+- `scripts/prepare_data.py`, `scripts/prepare_tatil.py`, `scripts/export_mart.py` : veri hazırlama ve dışa aktarma
 - `proje.pbix` : Power BI panosu
 - `veri_sozlugu.md` : sütun açıklamaları
 - `dbt/models/marts/fct_satis.sql`, `dim_musteri.sql`, `mart_segment_ozet.sql` : satış gerçek tablosu (resmi tatil bayrağıyla), müşteri boyut tablosu ve segment özet tablosu
@@ -50,8 +50,8 @@ python -m pip install dbt-duckdb pandas openpyxl duckdb requests
 2. UCI sitesinden `online_retail_II.xlsx` dosyasını indirip `data/` içine koyun.
 3. Verileri hazırlayın:
 ```
-python prepare_data.py
-python prepare_tatil.py
+python scripts/prepare_data.py
+python scripts/prepare_tatil.py
 ```
 4. dbt modellerini çalıştırın ve test edin:
 ```
@@ -60,7 +60,7 @@ dbt run --profiles-dir .
 dbt test --profiles-dir .
 dbt docs generate --profiles-dir .
 ```
-5. Power BI için tabloları dışa aktarın: `python ..\export_mart.py`
+5. Power BI için tabloları dışa aktarın: `python ..\scripts/export_mart.py`
 6. `proje.pbix` dosyasını Power BI Desktop ile açın.
 
 ## Dashboard
@@ -101,7 +101,7 @@ ondalık ayracı sorun çıkarabildiği için).
   Terminale şunu yazın, sonra tekrar deneyin:
   `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
 - **Excel dosyası repoda yok:** `online_retail_II.xlsx` dosyasını UCI sitesinden
-  indirip `data/` klasörüne koyun, ardından `python prepare_data.py` çalıştırın.
+  indirip `data/` klasörüne koyun, ardından `python scripts/prepare_data.py` çalıştırın.
 
 Bu adımlar temiz bir Windows bilgisayarında repo baştan kurularak test edilmiştir.
 `dbt run` (4 model) ve `dbt test` (10 test) hatasız çalışmıştır.
