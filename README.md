@@ -36,6 +36,9 @@ Atılanlar:
 - `prepare_data.py`, `prepare_tatil.py`, `export_mart.py` : veri hazırlama ve dışa aktarma
 - `proje.pbix` : Power BI panosu
 - `veri_sozlugu.md` : sütun açıklamaları
+- `dbt/models/marts/fct_satis.sql`, `dim_musteri.sql`, `mart_segment_ozet.sql` : satış gerçek tablosu (resmi tatil bayrağıyla), müşteri boyut tablosu ve segment özet tablosu
+- `notebooks/eda.ipynb` : keşifsel veri analizi (EDA)
+- `churn_model.py` : churn tahmin modeli (Bölüm 2 başlangıcı)
 
 ## Çalıştırma
 1. Python 3.12 kurun, sanal ortam açın ve dbt'yi kurun:
@@ -71,8 +74,8 @@ Her modelin açıklaması ve testleri `dbt docs generate` ile üretilen doküman
 
 ## Temel bulgular
 - Analizdeki 5.281 müşterinin yaklaşık %57'si kesme tarihinden sonraki 90 günde geri dönmedi.
-- Segmentlere göre churn oranı: Kaybedilmiş %81,6, Risk Altında %63,9,
-  Potansiyel %55,6, Şampiyon %29,1.
+- Segmentlere göre churn oranı: Kaybedilmiş %82,0, Risk Altında %62,5,
+  Potansiyel %56,7, Şampiyon %28,8.
 - Öneri: Risk Altında segmentine kişiye özel kampanya, Kaybedilmiş segmentine
   düşük maliyetli geri kazanım e-postası, Şampiyonlara sadakat programı.
 
