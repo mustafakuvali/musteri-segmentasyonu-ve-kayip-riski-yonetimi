@@ -2,7 +2,7 @@ import csv
 import os
 import requests
 
-klasor = os.path.dirname(os.path.abspath(__file__))
+klasor = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 hedef = os.path.join(klasor, "data", "uk_bank_holidays.csv")
 
 veri = requests.get("https://www.gov.uk/bank-holidays.json").json()

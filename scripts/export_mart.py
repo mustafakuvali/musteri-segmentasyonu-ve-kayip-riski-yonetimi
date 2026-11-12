@@ -1,7 +1,7 @@
 import os
 import duckdb
 
-klasor = os.path.dirname(os.path.abspath(__file__)).replace("\\", "/")
+klasor = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace("\\", "/")
 con = duckdb.connect(klasor + "/dbt/retail.duckdb", read_only=True)
 
 for tablo in ["mart_musteri_rfm", "mart_aylik_satis", "mart_segment_ozet"]:
