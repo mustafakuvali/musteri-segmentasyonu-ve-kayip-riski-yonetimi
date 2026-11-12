@@ -121,3 +121,13 @@ Bu adımlar temiz bir Windows bilgisayarında repo baştan kurularak test edilmi
 
 **Yapay zekâ desteği**
 - Bu projede kod yazımı ve adım adım açıklama için yapay zekâ asistanı (Claude, Anthropic) yardımcı olarak kullanılmıştır. Üretilen kodlar ekip tarafından çalıştırılmış ve test edilmiştir.
+
+## Ekip ve Görev Dağılımı
+
+Proje Google Meet üzerinden ortak yürütülmüştür. Üç üye de hattın adımlarını (veri hazırlama, dbt, dashboard) kendi bilgisayarında uygulayıp çalıştırarak doğrulamıştır. Kod GitHub'a ağırlıklı olarak repo sahibi hesabından gönderildiği için commit geçmişinde bu hesap öne çıkmaktadır. Sorumluluk alanları ekip içinde aşağıdaki gibi paylaşılmıştır.
+
+| Üye | Öğrenci No | GitHub | Sorumluluk alanı |
+|---|---|---|---|
+| Mustafa Selim Kuvali | 030424021 | [mustafakuvali](https://github.com/mustafakuvali) | dbt hattı (7 model, 10 test, dbt docs), Power BI dashboard, repo yönetimi |
+| Alperen Dinç | 030424037 | [alperendinc1453-collab](https://github.com/alperendinc1453-collab) | Model çalışması (`churn_model.py`, Bölüm 2 başlangıcı), README ve veri sözlüğü |
+| Yunus Emre Deniz | 030424038 | [yunusedeniz3403](https://github.com/yunusedeniz3403) | Veri toplama ve hazırlama (Online Retail II, UK tatil takvimi), EDA notebook, temiz kurulum testi ve sorun giderme dokümantasyonu |
