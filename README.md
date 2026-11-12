@@ -38,7 +38,7 @@ Atılanlar:
 - `veri_sozlugu.md` : sütun açıklamaları
 - `dbt/models/marts/fct_satis.sql`, `dim_musteri.sql`, `mart_segment_ozet.sql` : satış gerçek tablosu (resmi tatil bayrağıyla), müşteri boyut tablosu ve segment özet tablosu
 - `notebooks/eda.ipynb` : keşifsel veri analizi (EDA)
-- `churn_model.py` : churn tahmin modeli (Bölüm 2 başlangıcı)
+- `model/model/churn_model.py` : churn tahmin modeli (Bölüm 2 başlangıcı)
 
 ## Çalıştırma
 1. Python 3.12 kurun, sanal ortam açın ve dbt'yi kurun:
@@ -132,5 +132,5 @@ Proje Google Meet üzerinden ortak yürütülmüştür. Üç üye de hattın ad�
 | Üye | Öğrenci No | GitHub | Sorumluluk alanı |
 |---|---|---|---|
 | Mustafa Selim Kuvali | 030424021 | [mustafakuvali](https://github.com/mustafakuvali) | dbt hattı (7 model, 10 test, dbt docs), Power BI dashboard, repo yönetimi |
-| Alperen Dinç | 030424037 | [alperendinc1453-collab](https://github.com/alperendinc1453-collab) | Model çalışması (`churn_model.py`, Bölüm 2 başlangıcı), README ve veri sözlüğü |
+| Alperen Dinç | 030424037 | [alperendinc1453-collab](https://github.com/alperendinc1453-collab) | Model çalışması (`model/model/model/churn_model.py`, Bölüm 2 başlangıcı), README ve veri sözlüğü |
 | Yunus Emre Deniz | 030424038 | [yunusedeniz3403](https://github.com/yunusedeniz3403) | Veri toplama ve hazırlama (Online Retail II, UK tatil takvimi), EDA notebook, temiz kurulum testi ve sorun giderme dokümantasyonu |

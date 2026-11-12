@@ -7,3 +7,4 @@ dbt_packages/
 *.duckdb.wal
 data/online_retail_II.xlsx
 data/online_retail_ii.csv
+.user.yml
