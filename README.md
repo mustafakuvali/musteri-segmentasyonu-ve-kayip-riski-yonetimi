@@ -34,7 +34,7 @@ Atılanlar:
 - `dbt/models/marts/` : mart_musteri_rfm, mart_aylik_satis (analiz tabloları)
 - `dbt/models/schema.yml` : dbt testleri (10 test)
 - `prepare_data.py`, `prepare_tatil.py`, `export_mart.py` : veri hazırlama ve dışa aktarma
-- `dashboard.pbix` : Power BI panosu
+- `proje.pbix` : Power BI panosu
 - `veri_sozlugu.md` : sütun açıklamaları
 
 ## Çalıştırma
@@ -58,10 +58,16 @@ dbt test --profiles-dir .
 dbt docs generate --profiles-dir .
 ```
 5. Power BI için tabloları dışa aktarın: `python ..\export_mart.py`
-6. `dashboard.pbix` dosyasını Power BI Desktop ile açın.
+6. `proje.pbix` dosyasını Power BI Desktop ile açın.
 
 ## Dashboard
 ![Dashboard](dashboard.png)
+
+## dbt Akış Şeması
+Veri, ham dosyalardan staging modellerine, oradan mart tablolarına akar.
+Her modelin açıklaması ve testleri `dbt docs generate` ile üretilen dokümantasyonda görülebilir.
+
+![dbt akış şeması](dbt_lineage.png)
 
 ## Temel bulgular
 - Analizdeki 5.281 müşterinin yaklaşık %57'si kesme tarihinden sonraki 90 günde geri dönmedi.
@@ -82,6 +88,23 @@ ondalık ayracı sorun çıkarabildiği için).
 - Kişisel veri içermez, müşteriler yalnızca anonim numarayla temsil edilir (KVKK uyumu).
 
 - 
+
+## Sık Karşılaşılan Sorunlar (Windows)
+
+- **`py` komutu bulunamıyor:** Python'u python.org'dan kurarken
+  "Add python.exe to PATH" kutucuğunu işaretleyin, sonra VS Code'u kapatıp açın.
+  Sürüm olarak Python 3.12 kullanın.
+- **`Activate.ps1` çalıştırılamıyor ("running scripts is disabled"):**
+  Terminale şunu yazın, sonra tekrar deneyin:
+  `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+- **Excel dosyası repoda yok:** `online_retail_II.xlsx` dosyasını UCI sitesinden
+  indirip `data/` klasörüne koyun, ardından `python prepare_data.py` çalıştırın.
+
+Bu adımlar temiz bir Windows bilgisayarında repo baştan kurularak test edilmiştir.
+`dbt run` (4 model) ve `dbt test` (10 test) hatasız çalışmıştır.
+
+-
+
 ## Kaynakça
 
 **Veri kaynakları**
