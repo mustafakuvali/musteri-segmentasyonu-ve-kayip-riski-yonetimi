@@ -4,13 +4,13 @@ with ayar as (
 
 gecmis as (
     select s.*
-    from {{ ref('stg_satis') }} s, ayar a
+    from {{ ref('fct_satis') }} s, ayar a
     where cast(s.satis_zamani as date) <= a.kesme_tarihi
 ),
 
 gelecek as (
     select distinct s.musteri_id
-    from {{ ref('stg_satis') }} s, ayar a
+    from {{ ref('fct_satis') }} s, ayar a
     where cast(s.satis_zamani as date) > a.kesme_tarihi
       and cast(s.satis_zamani as date) <= a.kesme_tarihi + 90
 ),
