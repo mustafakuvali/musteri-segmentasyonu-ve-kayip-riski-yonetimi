@@ -30,9 +30,9 @@ rfm as (
 skorlu as (
     select
         *,
-        ntile(4) over (order by recency_gun desc) as r_skor,
-        ntile(4) over (order by frequency asc)    as f_skor,
-        ntile(4) over (order by monetary asc)     as m_skor
+        ntile(4) over (order by recency_gun desc, musteri_id) as r_skor,
+        ntile(4) over (order by frequency asc, musteri_id)    as f_skor,
+        ntile(4) over (order by monetary asc, musteri_id)     as m_skor
     from rfm
 )
 
