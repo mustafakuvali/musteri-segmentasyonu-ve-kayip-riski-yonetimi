@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fct_satis
+    description: "Satış satırı başına 1 satır; UK resmi tatil bayrağı eklenmiş gerçek tablosu"
+    columns:
+      - name: fatura_no
+        description: "Fatura numarası"
+        data_tests:
+          - not_null
+      - name: musteri_id
+        description: "Müşteri numarası"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_musteri')
+                field: musteri_id
+      - name: tatil_gunu_mu
+        description: "Satış günü UK resmi tatiliyse 1, değilse 0"
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+                quote: false
+
+  - name: dim_musteri
+    description: "Müşteri başına 1 satır; tüm dönemin özeti"
+    columns:
+      - name: musteri_id
+        description: "Müşteri numarası"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: mart_segment_ozet
+    description: "Segment başına müşteri sayısı, churn oranı ve risk altındaki harcama"
+    columns:
+      - name: segment
+        description: "RFM segmenti"
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Sampiyon', 'Potansiyel', 'Risk Altinda', 'Kaybedilmis']

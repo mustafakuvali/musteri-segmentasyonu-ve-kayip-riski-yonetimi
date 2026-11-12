@@ -32,13 +32,20 @@ Atılanlar:
 - `data/` : ham veri ve dış kaynak dosyaları
 - `dbt/models/staging/` : stg_satis, stg_tatil (temizleme)
 - `dbt/models/marts/` : mart_musteri_rfm, mart_aylik_satis (analiz tabloları)
-- `dbt/models/schema.yml` : dbt testleri (10 test)
+- `dbt/models/schema.yml`, `dbt/models/marts/schema_marts.yml`, `dbt/tests/` : dbt testleri (22 test)
 - `scripts/prepare_data.py`, `scripts/prepare_tatil.py`, `scripts/export_mart.py` : veri hazırlama ve dışa aktarma
 - `proje.pbix` : Power BI panosu
 - `veri_sozlugu.md` : sütun açıklamaları
 - `dbt/models/marts/fct_satis.sql`, `dim_musteri.sql`, `mart_segment_ozet.sql` : satış gerçek tablosu (resmi tatil bayrağıyla), müşteri boyut tablosu ve segment özet tablosu
 - `notebooks/eda.ipynb` : keşifsel veri analizi (EDA)
 - `model/model/churn_model.py` : churn tahmin modeli (Bölüm 2 başlangıcı)
+
+## dbt Testleri
+Projede toplam 22 test var:
+- **19 genel (generic) test:** `not_null`, `unique`, `accepted_values` ve `relationships` (satışlardaki müşteri numaralarının müşteri tablosunda bulunması).
+- **3 özel (singular) SQL testi** (`dbt/tests/`): segmentlerdeki müşteri toplamı RFM tablosuyla aynı mı, RFM değerleri geçerli mi, satır tutarları pozitif mi.
+
+Çalıştırma: `cd dbt` ardından `dbt test --profiles-dir .`
 
 ## Çalıştırma
 1. Python 3.12 kurun, sanal ortam açın ve dbt'yi kurun:
@@ -104,7 +111,7 @@ ondalık ayracı sorun çıkarabildiği için).
   indirip `data/` klasörüne koyun, ardından `python scripts/prepare_data.py` çalıştırın.
 
 Bu adımlar temiz bir Windows bilgisayarında repo baştan kurularak test edilmiştir.
-`dbt run` (4 model) ve `dbt test` (10 test) hatasız çalışmıştır.
+`dbt run` ve `dbt test` hatasız çalışmıştır.
 
 -
 
@@ -131,6 +138,6 @@ Proje Google Meet üzerinden ortak yürütülmüştür. Üç üye de hattın ad�
 
 | Üye | Öğrenci No | GitHub | Sorumluluk alanı |
 |---|---|---|---|
-| Mustafa Selim Kuvali | 030424021 | [mustafakuvali](https://github.com/mustafakuvali) | dbt hattı (7 model, 10 test, dbt docs), Power BI dashboard, repo yönetimi |
+| Mustafa Selim Kuvali | 030424021 | [mustafakuvali](https://github.com/mustafakuvali) | dbt hattı (7 model, 22 test, dbt docs), Power BI dashboard, repo yönetimi |
 | Alperen Dinç | 030424037 | [alperendinc1453-collab](https://github.com/alperendinc1453-collab) | Model çalışması (`model/model/model/churn_model.py`, Bölüm 2 başlangıcı), README ve veri sözlüğü |
 | Yunus Emre Deniz | 030424038 | [yunusedeniz3403](https://github.com/yunusedeniz3403) | Veri toplama ve hazırlama (Online Retail II, UK tatil takvimi), EDA notebook, temiz kurulum testi ve sorun giderme dokümantasyonu |
